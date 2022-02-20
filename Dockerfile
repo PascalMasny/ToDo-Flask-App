@@ -1,6 +1,8 @@
 FROM python:alpine3.7
 COPY . /app
+COPY requirements.txt ./
 WORKDIR /app
+RUN pip3 install --upgrade pip
 RUN pip3 install -r requirements.txt
 EXPOSE 5001
 ENTRYPOINT [ "python" ]
