@@ -24,3 +24,16 @@ exit()
 **Step 4** - Run the app-
 
 ```python3 app.py```
+
+
+sudo docker build --tag todo-flask-app .  
+
+sudo docker run --name todo-flask-app -p 5001:5001 todo-flask-app
+
+https://codeopolis.com/posts/25-basic-docker-commands-for-beginners/
+
+https://www.geeksforgeeks.org/dockerize-your-flask-app/
+
+https://stackoverflow.com/questions/50789522/flask-docker-data-not-send-by-127-0-0-1
+
+https://stackoverflow.com/questions/7023052/configure-flask-dev-server-to-be-visible-across-the-network
