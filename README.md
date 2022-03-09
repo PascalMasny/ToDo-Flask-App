@@ -23,13 +23,7 @@ exit()
 
 **Step 4** - Run the app-
 
-```python3 app.py```
-
-**Step 5** - Start the docker -
-
-```sudo docker build --tag todo-flask-app .```
-
-```sudo docker run --name todo-flask-app -p 5001:5001 todo-flask-app ```
+```cd app/ && gunicorn app:app -b 0.0.0.0```
 
 
 
