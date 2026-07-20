@@ -1,29 +1,36 @@
 # ToDo Flask App
-<img src="https://img.shields.io/badge/Python-FFD43B?style=for-the-badge&logo=python&logoColor=blue"> <img src="https://img.shields.io/badge/Flask-000000?style=for-the-badge&logo=flask&logoColor=white"> <img src="https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white"> <img src="https://img.shields.io/badge/Docker-2CA5E0?style=for-the-badge&logo=docker&logoColor=white">
 
-A simple ToDo Flask App
+Eine schlichte, aber praktische **ToDo-Web-App** mit Flask und SQLite. Aufgaben anlegen, bearbeiten, löschen, fertig. Entstanden, um Flask, SQLAlchemy und Deployment sauber zu üben.
 
-# Setup
+## Features
+- CRUD: Aufgaben mit Titel und Beschreibung anlegen, aktualisieren und löschen.
+- Persistenz über **SQLAlchemy** + SQLite (`todo.db`).
+- Templates mit Bootstrap (`base`, `index`, `update`).
+- Deployment-fertig: Dockerfile-Ansatz und GitHub-Actions-Workflows (Azure Web App).
 
-**Step 1** - Clone the repository using git clone.
+## Setup
+```bash
+git clone https://github.com/PascalMasny/ToDo-Flask-App.git
+pip3 install -r requirements.txt
 
-```git clone { url }```
+# Datenbank initialisieren
+python3
+>>> from app import db
+>>> db.create_all()
+>>> exit()
 
-**Step 2** - Install project dependencies-
-
-```pip3 install -r requirements.txt```
-
-**Step 3**- Open the Terminal and type `pythonp3` and init the DB-
-
+# starten
+cd app/ && gunicorn app:app -b 0.0.0.0:8000
+# oder lokal:  python3 app/app.py   (Port 8000)
 ```
-from app import db
-db.create_all()
-exit()
-```
 
-**Step 4** - Run the app-
+## Stack
+`Python 3` · `Flask` · `SQLAlchemy` · `SQLite` · `Bootstrap` · `Docker` · `GitHub Actions`
 
-```cd app/ && gunicorn app:app -b 0.0.0.0```
+<details>
+<summary>🇬🇧 English</summary>
 
+A simple but usable **ToDo web app** built with Flask and SQLite (SQLAlchemy). Create, edit and delete tasks; Bootstrap templates; ready to deploy via Docker and GitHub Actions (Azure Web App). Install requirements, init the DB (`db.create_all()`), then run with gunicorn or `python3 app/app.py`.
+</details>
 
-
+> Flask- und Deployment-Übung, 2022.
